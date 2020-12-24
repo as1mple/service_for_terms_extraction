@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, current_app
+from flask import Flask, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 
 from terms_extraction import *
@@ -33,9 +33,6 @@ def upload_file():
          <input type=submit value=extraction>
     </form>
     '''
-
-
-from flask import send_from_directory
 
 
 @app.route('/uploads/<filename>', methods=['GET', 'POST'])
